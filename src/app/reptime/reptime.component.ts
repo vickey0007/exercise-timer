@@ -22,7 +22,7 @@ export class ReptimeComponent implements OnInit {
 
   playAudio() {
     let audio = new Audio();
-    audio.src = "../../../assets/start.wav";
+    audio.src = "assets/start.wav";
     audio.load();
     audio.play();
   }

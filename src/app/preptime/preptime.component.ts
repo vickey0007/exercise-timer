@@ -18,7 +18,7 @@ export class PreptimeComponent implements OnInit {
 
   playAudio() {
     let audio = new Audio();
-    audio.src = "../../../assets/ready.wav";
+    audio.src = "assets/ready.wav";
     audio.load();
     audio.play();
   }

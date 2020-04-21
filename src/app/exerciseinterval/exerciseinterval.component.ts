@@ -21,7 +21,7 @@ export class ExerciseintervalComponent implements OnInit {
 
   playAudio() {
     let audio = new Audio();
-    audio.src = "../../../assets/break.wav";
+    audio.src = "assets/break.wav";
     audio.load();
     audio.play();
   }

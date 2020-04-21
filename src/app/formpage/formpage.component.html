@@ -1,36 +1,51 @@
-<div fxLayout="row" fxLayoutAlign="center center" fxFill style="background-color: black;">
-    <img src="/assets/logo.png" class="logo">
-    <div class="width100">
+<div fxLayout="row" fxLayoutAlign="center start" fxFill style="background-color: black;padding-top: 3em;">
+    <div class="width100" fxLayout="column">
+        <img src="assets/logo.png" class="logo">
         <form fxLayout="column" fxLayoutAlign="center center" fxFlex="100" [formGroup]="myForm"
             (ngSubmit)="onSubmit(myForm)">
             <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;">
                 <mat-form-field>
                     <mat-label>Number of Exercises</mat-label>
-                    <input matInput type="number" formControlName="noExcersises" required>
+                    <input matInput type="number" formControlName="noExcersises" minlength="3" required>
+                    <mat-error>
+                        Please enter a value between 3-45
+                    </mat-error>
                 </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;">
                 <mat-form-field>
                     <mat-label>Number of Reps</mat-label>
-                    <input matInput type="number" formControlName="noReps" required>
+                    <input matInput type="number" formControlName="noReps" minlength="1" required>
+                    <mat-error>
+                        Please enter a value between 2-45
+                    </mat-error>
                 </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;" required>
                 <mat-form-field>
                     <mat-label>Time of Each Rep(Sec)</mat-label>
-                    <input matInput type="number" formControlName="timeReps" required>
+                    <input matInput type="number" formControlName="timeReps" minlength="10" required>
+                    <mat-error>
+                        Please enter a value between 5-45
+                    </mat-error>
                 </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;">
                 <mat-form-field>
                     <mat-label>Interval between Reps(Sec)</mat-label>
-                    <input type="number" formControlName="repInterval" matInput required>
+                    <input type="number" formControlName="repInterval" matInput minlength="5" required>
+                    <mat-error>
+                        Please enter a value between 5-45
+                    </mat-error>
                 </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;">
                 <mat-form-field>
                     <mat-label>Interval between Exercises(Sec)</mat-label>
-                    <input type="number" formControlName="exerIterval" matInput required>
+                    <input type="number" formControlName="exerIterval" matInput minlength="3" required>
+                    <mat-error>
+                        Please enter a value between 5-45
+                    </mat-error>
                 </mat-form-field>
             </div>
             <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;padding-top: 1em;">

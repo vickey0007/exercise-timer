@@ -22,7 +22,7 @@ export class IntervaltimeComponent implements OnInit {
 
   playAudio() {
     let audio = new Audio();
-    audio.src = "../../../assets/stop.wav";
+    audio.src = "assets/stop.wav";
     audio.load();
     audio.play();
   }
