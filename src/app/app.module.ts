@@ -14,6 +14,33 @@ import { ReptimeComponent } from './reptime/reptime.component';
 import { IntervaltimeComponent } from './intervaltime/intervaltime.component';
 import { ExerciseintervalComponent } from './exerciseinterval/exerciseinterval.component';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
+
+const routes = [
+  {
+    path: '',
+    component: FormpageComponent
+  }, {
+    path: 'clock',
+    component: ClockComponent
+  },
+  {
+    path: 'prep',
+    component: PreptimeComponent
+  }, {
+    path: 'rep',
+    component: ReptimeComponent
+  },
+  {
+    path: 'interval',
+    component: IntervaltimeComponent
+  },
+  {
+    path: 'exerciseint',
+    component: ExerciseintervalComponent
+  }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +52,7 @@ import { MatIconModule } from '@angular/material/icon';
     ExerciseintervalComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, BrowserAnimationsModule, FlexLayoutModule, MatInputModule, MatButtonModule, ReactiveFormsModule, MatIconModule
+    RouterModule.forRoot(routes),BrowserModule, BrowserAnimationsModule, FlexLayoutModule, MatInputModule, MatButtonModule, ReactiveFormsModule, MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

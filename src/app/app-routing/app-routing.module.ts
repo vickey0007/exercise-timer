@@ -8,7 +8,7 @@ import { ReptimeComponent } from '../reptime/reptime.component';
 import { IntervaltimeComponent } from '../intervaltime/intervaltime.component';
 import { ExerciseintervalComponent } from '../exerciseinterval/exerciseinterval.component';
 
-const routes: Routes = [
+const routes = [
   {
     path: '',
     component: FormpageComponent
