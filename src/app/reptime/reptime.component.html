@@ -1,0 +1,13 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxFill style="background-color: #a21818;">
+    <p class="counterText"> Go! </p>
+    <p style="color: white; font-size: 15em;">{{ counter}}</p>
+    <div fxLayout="row" fxLayoutAlign="space-between center" style="position: absolute;bottom: 3em; width: 80%;">
+        <button routerLink="/" mat-fab color="primary">
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+        <button (click)="startTimer()" mat-fab color="primary">
+            <mat-icon>pause</mat-icon>
+        </button>
+    </div>
+    <small class="footer">&copy; Copyright 2020, Chiranjit Nag</small>
+</div>

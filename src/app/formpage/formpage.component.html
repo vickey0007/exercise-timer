@@ -1,0 +1,45 @@
+<div fxLayout="row" fxLayoutAlign="center center" fxFill style="background-color: black;">
+    <img src="/assets/logo.png" class="logo">
+    <div class="width100">
+        <form fxLayout="column" fxLayoutAlign="center center" fxFlex="100" [formGroup]="myForm"
+            (ngSubmit)="onSubmit(myForm)">
+            <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;">
+                <mat-form-field>
+                    <mat-label>Number of Exercises</mat-label>
+                    <input matInput type="number" formControlName="noExcersises" required>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;">
+                <mat-form-field>
+                    <mat-label>Number of Reps</mat-label>
+                    <input matInput type="number" formControlName="noReps" required>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;" required>
+                <mat-form-field>
+                    <mat-label>Time of Each Rep(Sec)</mat-label>
+                    <input matInput type="number" formControlName="timeReps" required>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;">
+                <mat-form-field>
+                    <mat-label>Interval between Reps(Sec)</mat-label>
+                    <input type="number" formControlName="repInterval" matInput required>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;">
+                <mat-form-field>
+                    <mat-label>Interval between Exercises(Sec)</mat-label>
+                    <input type="number" formControlName="exerIterval" matInput required>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;padding-top: 1em;">
+                <button mat-raised-button color="primary" style="margin-right: 1em;" type="submit"
+                    [disabled]="myForm.invalid">Let's Go</button>
+                <button mat-raised-button color="primary" (click)='vickey()'>Vickey's</button>
+            </div>
+            <p class="quote">"{{quote}}"</p>
+        </form>
+    </div>
+    <small class="footer">&copy; Copyright 2020, Chiranjit Nag</small>
+</div>
