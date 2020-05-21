@@ -15,6 +15,8 @@ export class FormpageComponent implements OnInit {
   x;
   myForm: FormGroup;
   noExcersisesE = false;
+  total;
+  show =false;
   constructor(private fb: FormBuilder, private common: CommonService, private router: Router) { }
 
   ngOnInit(): void {
@@ -26,6 +28,20 @@ export class FormpageComponent implements OnInit {
       exerIterval: ['', [Validators.required, Validators.pattern(/^[5-9]$|^[1-3][0-9]$|^[4][0-5]$/)]]
     });
     this.x = setInterval(() => { this.getQuote(); }, 3000);
+  }
+
+  calculateTotal() {
+    let exerciseNo = this.myForm.get('noExcersises').value;
+    let repNo = this.myForm.get('noReps').value;
+    let timeOfEachRep = this.myForm.get('timeReps').value;
+    let repInterVal = this.myForm.get('repInterval').value;
+    let exerInterVal = this.myForm.get('exerIterval').value
+
+    this.total = 0;
+    this.total = (exerciseNo * repNo * timeOfEachRep) + (repInterVal * exerciseNo * (repNo - 1)) + (exerInterVal * exerciseNo)
+    let temp = Math.floor(this.total / 60);
+    this.total = temp;
+    this.show = true;
   }
 
   getQuote() {
@@ -45,7 +61,7 @@ export class FormpageComponent implements OnInit {
   vickey() {
     this.common.formData = {
       "exerIterval": 60,
-      "repInterval": 20,
+      "repInterval": 30,
       "timeReps": 35,
       "noExcersises": 12,
       "noReps": 3,
@@ -54,6 +70,14 @@ export class FormpageComponent implements OnInit {
   }
 
   onSubmit(form: FormGroup) {
+    // let temp = {
+    //   "exerIterval": 15,
+    //   "noExcersises": 12,
+    //   "noReps": 2,
+    //   "repInterval": 12,
+    //   "timeReps": 10,
+    // }
+    // this.common.formData = temp;
     this.common.formData = form.value;
     this.router.navigate(['/prep'])
   }

@@ -48,13 +48,18 @@
                     </mat-error>
                 </mat-form-field>
             </div>
+            <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;">
+                <span class="material-icons" style="color: white; font-size: 3em;" (click)="calculateTotal()">
+                    alarm
+                </span> <span style="color: white;font-size: 1.5em;padding-left: 0.5em;" *ngIf ="show">{{total}} mins</span>
+            </div>
             <div fxLayout="row" fxLayoutAlign="center center" style="width: 80%;padding-top: 1em;">
                 <button mat-raised-button color="primary" style="margin-right: 1em;" type="submit"
                     [disabled]="myForm.invalid">Let's Go</button>
                 <button mat-raised-button color="primary" (click)='vickey()'>Vickey's</button>
             </div>
             <p class="quote">"{{quote}}"</p>
+            <small class="form-footer">&copy; Copyright 2020, Chiranjit Nag</small>
         </form>
     </div>
-    <small class="footer">&copy; Copyright 2020, Chiranjit Nag</small>
 </div>
